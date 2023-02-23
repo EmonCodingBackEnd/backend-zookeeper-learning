@@ -5,29 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>backend-zookeeper-learning</artifactId>
+        <artifactId>normal-parent</artifactId>
         <groupId>com.coding.zookeeper</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../normal-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>zookeeper-02-curator</artifactId>
-    <packaging>jar</packaging>
 
     <dependencies>
         <!-- 定义三方包 beg -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- Apache工具组件 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-
         <!--ZooKeeper的原生API-->
         <!--对 ZooKeeper 底层 API 的一些封装-->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-client</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
@@ -38,9 +31,24 @@
             <artifactId>curator-recipes</artifactId>
         </dependency>
 
+        <!-- Apache工具组件 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!--jackson工具包-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
         <!-- 定义三方包 end -->
 
