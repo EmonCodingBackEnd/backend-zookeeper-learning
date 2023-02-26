@@ -14,8 +14,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>../zookeeper-01-native</module>
-        <module>../zookeeper-02-curator</module>
+        <module>zookeeper-01-native</module>
+        <module>zookeeper-02-curator</module>
     </modules>
 
     <properties>
@@ -37,7 +37,7 @@
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.4</version>
                 <!--排除掉 Slf4j到log4j的适配器，解决 SLF4J: Class path contains multiple SLF4J bindings.-->
                 <exclusions>
                     <exclusion>

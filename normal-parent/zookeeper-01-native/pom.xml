@@ -8,7 +8,7 @@
         <artifactId>normal-parent</artifactId>
         <groupId>com.coding.zookeeper</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../normal-parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>zookeeper-01-native</artifactId>
