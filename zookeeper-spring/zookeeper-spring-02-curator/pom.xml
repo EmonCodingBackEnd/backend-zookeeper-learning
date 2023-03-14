@@ -11,7 +11,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>zookeeper-02-curator</artifactId>
+    <artifactId>zookeeper-spring-curator</artifactId>
 
     <dependencyManagement>
         <dependencies>

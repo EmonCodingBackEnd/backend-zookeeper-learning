@@ -14,8 +14,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>zookeeper-01-native</module>
-        <module>zookeeper-02-curator</module>
+        <module>zookeeper-spring-01-native</module>
+        <module>zookeeper-spring-02-curator</module>
     </modules>
 
     <dependencyManagement>

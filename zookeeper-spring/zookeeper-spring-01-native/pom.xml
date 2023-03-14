@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>zookeeper-01-native</artifactId>
+    <artifactId>zookeeper-spring-01-native</artifactId>
 
     <dependencyManagement>
         <dependencies>
