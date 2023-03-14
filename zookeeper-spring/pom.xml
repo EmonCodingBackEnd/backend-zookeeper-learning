@@ -10,24 +10,13 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>normal-parent</artifactId>
+    <artifactId>zookeeper-spring</artifactId>
     <packaging>pom</packaging>
 
     <modules>
         <module>zookeeper-01-native</module>
         <module>zookeeper-02-curator</module>
     </modules>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-
-        <slf4j.version>1.7.36</slf4j.version>
-        <logback.version>1.2.11</logback.version>
-    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -36,7 +25,7 @@
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
-                <version>3.6.4</version>
+                <version>${zookeeper.version}</version>
                 <!--排除掉 Slf4j到log4j的适配器，解决 SLF4J: Class path contains multiple SLF4J bindings.-->
                 <exclusions>
                     <exclusion>
@@ -50,7 +39,7 @@
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-client</artifactId>
-                <version>5.1.0</version>
+                <version>${curator.version}</version>
                 <!--排除掉 Slf4j到log4j的适配器，解决 SLF4J: Class path contains multiple SLF4J bindings.-->
                 <exclusions>
                     <exclusion>
@@ -62,7 +51,7 @@
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
-                <version>5.1.0</version>
+                <version>${curator.version}</version>
                 <!--排除掉 Slf4j到log4j的适配器，解决 SLF4J: Class path contains multiple SLF4J bindings.-->
                 <exclusions>
                     <exclusion>
@@ -75,7 +64,7 @@
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
-                <version>5.1.0</version>
+                <version>${curator.version}</version>
                 <!--排除掉 Slf4j到log4j的适配器，解决 SLF4J: Class path contains multiple SLF4J bindings.-->
                 <exclusions>
                     <exclusion>
@@ -89,43 +78,10 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.12.0</version>
-            </dependency>
-
-            <!--jackson工具包-->
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-core</artifactId>
-                <version>2.14.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-annotations</artifactId>
-                <version>2.14.2</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>2.14.2</version>
-            </dependency>
-
-            <!-- 日志处理 -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-core</artifactId>
-                <version>${logback.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>${logback.version}</version>
+                <version>${commons-lang3.version}</version>
             </dependency>
             <!-- 定义三方包 end -->
+
 
             <!-- 定义二方包 beg -->
             <!-- 定义二方包 end -->
@@ -139,11 +95,52 @@
     <dependencies>
         <!-- 定义三方包 beg -->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- ==================================================华丽的分割线================================================== -->
+        <!--ZooKeeper的原生API-->
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
         </dependency>
         <!-- 定义三方包 end -->
+
 
         <!-- 定义二方包 beg -->
         <!-- 定义二方包 end -->
@@ -152,5 +149,6 @@
         <!-- 定义一方包 beg -->
         <!-- 定义一方包 end -->
     </dependencies>
+
 
 </project>
